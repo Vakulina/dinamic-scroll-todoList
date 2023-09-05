@@ -1,0 +1,126 @@
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 263px;
+  min-height: 166px;
+  background-color: #f4f8ff;
+  border-radius: 7px;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 255px;
+    height: 158px;
+    max-height: 158px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--neuteral-white, #fff);
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0px 1px 2px 0px #d0daeb, 0px 0px 2px 0px #eef4fe;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    position: relative;
+  }
+  &__header {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    overflow-wrap: normal;
+    position: relative;
+  }
+  &__title {
+    text-align: left;
+    text-indent: 20px;
+    margin: 0;
+    color: var(--primary-blue, #3d8fec);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+  }
+  &__checkbox {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+  &__dateField {
+    display: flex;
+    justify-content: space-between;
+    color: var(--statuses-green, #50b810);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  &__description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    overflow-wrap: normal;
+    height: 20px;
+    overflow: hidden;
+    color: var(--neuteral-black-primary, #555);
+    font-size: 13px;
+    line-height: 140%;
+    text-align: left;
+  }
+
+  &__description {
+    margin: 0;
+  }
+  &__footer {
+    display: flex;
+    justify-content: start;
+    gap: 4px;
+    width: 100%;
+    max-width: 235px;
+    position: absolute;
+    bottom: 11px;
+    left: 10px;
+  }
+  &__avatar {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    border-radius: 100%;
+  }
+  &__titleTag {
+    border-radius: 4px;
+    background: var(--statuses-entity-tag, #b233a6);
+    color: var(--neuteral-white, #fff);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 140%;
+    display: flex;
+    padding: 1px 6px 2px 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  &__focusTag {
+    background: var(--neuteral-gray-20, #ebeef6);
+    color: var(--primary-gray-dark, #616c82);
+    position: relative;
+    padding: 1px 0px 2px 6px;
+    border-radius: 4px 0 0 4px;
+
+    &::after {
+      content:'';
+      background-image: url("../../../assets/Rectangle.svg");
+      background-size: 20px 100%;
+      display: block;
+      height: 27px;
+      width: 18px;
+      position: absolute;
+      top: 0;
+      right: -15px;
+    }
+  }
+}

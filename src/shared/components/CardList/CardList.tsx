@@ -3,21 +3,21 @@ import s from "./CardList.module.scss";
 import { Card } from "../Card";
 import { TodosContext } from "../../contexts/TodosContext";
 
+const PAGES_COUNT = 20;
+
 const CardList: FC = () => {
   const blockEnd = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const { cards, loadCards } = useContext(TodosContext);
-
-  let num = 1;
+  const numRef = useRef<number>(1);
+  const { loadCards } = useContext(TodosContext);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          num++;
+          numRef.current = numRef.current + 1;
           loadCards();
-          if (num >= 20) {
+          if (numRef.current >= PAGES_COUNT) {
             if (blockEnd.current) observer.unobserve(blockEnd.current);
           }
         }
@@ -26,7 +26,7 @@ const CardList: FC = () => {
     );
 
     if (blockEnd.current) observer.observe(blockEnd.current);
-  }, [num]);
+  }, []);
 
   return (
     <TodosContext.Consumer>

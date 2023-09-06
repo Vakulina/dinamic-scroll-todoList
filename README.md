@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# dinamic-scroll-todo-list
+Колонка с динамически запрашиваемыми задачами
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## [Деплой](https://dinamic-scroll-todo-list.vercel.app/)
 
-Currently, two official plugins are available:
+# Используемые технологии:
+- [открытый API](https://jsonplaceholder.typicode.com/todos) для получения списка задач 
+- React 18
+- Typescript
+- SCSS-модули для стилизации
+- Сборщик vite
+- Intersection Observer API для реализации динамической подгрузки по скроллу
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Запуск проекта локально:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+1. Убедитесь, что у вас установлен [Node.js](https://nodejs.org) и npm (Node Package Manager) на вашем компьютере.
+2. Установите зависимости, выполнив следующую команду в командной строке:
+```bash
+npm install
 ```
+3. Запустите проект в режиме разработки на dev-сервере:
+```bash
+npm run dev
+```
+4. Откройте браузер и перейдите по адресу [http://localhost:5173/](http://localhost:5173/), чтобы просмотреть проект.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+### [Макет](https://www.figma.com/file/45DmbitghX9IOkW0Qqef1G/Amwork-Test-Assignment-(Copy)?type=design&node-id=0-1&mode=design&t=kgv7yFLELHTdgf7e-0)
+

@@ -4,14 +4,15 @@ import { Card } from "../Card";
 import { TodosContext } from "../../contexts/TodosContext";
 
 const PAGES_COUNT = 20;
+const COUNT_CARDS_ON_PAGE = 10;
 
 const TodoList: FC = () => {
   const blockEnd = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const numRef = useRef<number>(1);
-  const { loadCards } = useContext(TodosContext);
+  const { cards, loadCards } = useContext(TodosContext);
 
-  useEffect(() => {
+  function setObserver() {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -24,9 +25,12 @@ const TodoList: FC = () => {
       },
       { threshold: 1 }
     );
-
     if (blockEnd.current) observer.observe(blockEnd.current);
-  }, []);
+  }
+
+  useEffect(() => {
+    if (cards.length === COUNT_CARDS_ON_PAGE) setObserver();
+  }, [cards.length]);
 
   return (
     <TodosContext.Consumer>

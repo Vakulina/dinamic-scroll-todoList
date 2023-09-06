@@ -1,14 +1,16 @@
 .cardList {
-
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: calc(100vh - 10% - 10%);
-    width: 100%;
-    max-width: 263px;
-    overflow-y: auto;
-    &::-webkit-scrollbar {
-      display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: calc(100vh - 10% - 10%);
+  width: 100%;
+  max-width: 263px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
   }
-
+  &__blockEnd {
+    width: 100%;
+    height: 0;
+  }
 }

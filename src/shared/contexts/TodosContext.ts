@@ -1,11 +1,10 @@
 import { createContext } from "react";
-import { EventDto } from "../../api/dto/Event";
+import { CardProps } from "../components/Card";
 
-export const TodoContext = createContext<{
-    cards: EventDto[];
-    loadCards: () => void;
-  }>({
-    cards: [],
-    loadCards: () => Promise.resolve(),
-  });
-  
+export const TodosContext = createContext<{
+  cards: CardProps[];
+  loadCards: () => void;
+}>({
+  cards: [],
+  loadCards: () => Promise.resolve(),
+});

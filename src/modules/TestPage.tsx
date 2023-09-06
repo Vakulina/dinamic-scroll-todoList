@@ -14,7 +14,7 @@ import { TodosContext } from "../shared/contexts/TodosContext";
 import { getCardProps } from "../shared/utils/getRandomFormattedTimestamp";
 import { CardProps } from "../shared/components/Card";
 
-const CardList = lazy(() => import("../shared/components/CardList/CardList"));
+const TodoList = lazy(() => import("../shared/components/TodoList/TodoList"));
 
 const TestPage: FC = () => {
   const [query, setQuery] = useState<number>(1);
@@ -46,7 +46,7 @@ const TestPage: FC = () => {
           <span className={s.testPage__count}>{cards.length}</span>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
-          <CardList />
+          <TodoList />
         </Suspense>
       </div>
     </TodosContext.Provider>

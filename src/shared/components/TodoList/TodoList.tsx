@@ -1,11 +1,11 @@
 import { FC, useEffect, useRef, useContext } from "react";
-import s from "./CardList.module.scss";
+import s from "./TodoList.module.scss";
 import { Card } from "../Card";
 import { TodosContext } from "../../contexts/TodosContext";
 
 const PAGES_COUNT = 20;
 
-const CardList: FC = () => {
+const TodoList: FC = () => {
   const blockEnd = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const numRef = useRef<number>(1);
@@ -31,15 +31,15 @@ const CardList: FC = () => {
   return (
     <TodosContext.Consumer>
       {({ cards }) => (
-        <div className={s.cardList} ref={containerRef}>
+        <div className={s.todoList} ref={containerRef}>
           {cards.map((card) => {
             return <Card {...card} key={card.id} />;
           })}
-          <div className={s.cardList__blockEnd} ref={blockEnd}></div>
+          <div className={s.todoList__blockEnd} ref={blockEnd}></div>
         </div>
       )}
     </TodosContext.Consumer>
   );
 };
 
-export default CardList;
+export default TodoList;

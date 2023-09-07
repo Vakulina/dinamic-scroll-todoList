@@ -8,13 +8,15 @@ import {
   useEffect,
 } from "react";
 import s from "./TestPage.module.scss";
-import AddIcon from "../assets/add_bold.svg";
-import { todosService } from "../api";
-import { TodosContext } from "../shared/contexts/TodosContext";
-import { getCardProps } from "../shared/utils/getRandomFormattedTimestamp";
-import { CardProps } from "../shared/components/Card";
+import AddIcon from "../../assets/add_bold.svg";
+import { todosService } from "../../api";
+import { TodosContext } from "../../shared/contexts/TodosContext";
+import { getCardProps } from "../../shared/utils/getRandomFormattedTimestamp";
+import { CardProps } from "../../shared/components/Card";
 
-const TodoList = lazy(() => import("../shared/components/TodoList/TodoList"));
+const TodoList = lazy(
+  () => import("../../shared/components/TodoList/TodoList")
+);
 
 const TestPage: FC = () => {
   const [query, setQuery] = useState<number>(1);

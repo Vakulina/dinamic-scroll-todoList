@@ -4,7 +4,7 @@ import { ErrorBoundary } from "./shared/components/ErrorBoundary";
 import { lazy } from 'react';
 
 const TestPage = lazy(() =>
-    import('./modules/TestPage')
+    import('./modules/TestPage/TestPage')
 );
 
 function App() {

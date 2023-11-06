@@ -1,7 +1,7 @@
-import { FC, useEffect, useRef, useContext } from "react";
-import s from "./TodoList.module.scss";
-import { Card } from "../Card";
-import { TodosContext } from "../../contexts/TodosContext";
+import { FC, useEffect, useRef, useContext } from 'react';
+import s from './TodoList.module.scss';
+import { Card } from '../Card';
+import { TodosContext } from '../../contexts/TodosContext';
 
 const PAGES_COUNT = 20;
 const COUNT_CARDS_ON_PAGE = 10;
